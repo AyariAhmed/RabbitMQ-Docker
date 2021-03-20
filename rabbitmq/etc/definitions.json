@@ -1,0 +1,72 @@
+{
+  "rabbit_version": "3.8.14",
+  "rabbitmq_version": "3.8.14",
+  "product_name": "RabbitMQ",
+  "product_version": "3.8.14",
+  "users": [
+    {
+      "name": "admin",
+      "password_hash": "S3hKERB/XsNH5IjPpnNLAEVENy4gbX3GhlCl2F+ArwnawqPi",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": "administrator",
+      "limits": {}
+    },
+    {
+      "name": "guest",
+      "password_hash": "zKxPgODwziAO1zokkqvi7XbYYtfoJgIDLG3W6yRGduTir9Nc",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": "administrator",
+      "limits": {}
+    }
+  ],
+  "vhosts": [{ "name": "/" }],
+  "permissions": [
+    {
+      "user": "guest",
+      "vhost": "/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    }
+  ],
+  "topic_permissions": [],
+  "parameters": [],
+  "global_parameters": [
+    { "name": "cluster_name", "value": "rabbit@my-rabbit" },
+    {
+      "name": "internal_cluster_id",
+      "value": "rabbitmq-cluster-id-ruAYs3TB_O_o25BtHeMIyQ"
+    }
+  ],
+  "policies": [],
+  "queues": [
+    {
+      "name": "test-queue",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": { "x-queue-type": "classic" }
+    }
+  ],
+  "exchanges": [
+    {
+      "name": "test-exchange",
+      "vhost": "/",
+      "type": "direct",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    }
+  ],
+  "bindings": [
+    {
+      "source": "test-exchange",
+      "vhost": "/",
+      "destination": "test-queue",
+      "destination_type": "queue",
+      "routing_key": "key",
+      "arguments": {}
+    }
+  ]
+}
