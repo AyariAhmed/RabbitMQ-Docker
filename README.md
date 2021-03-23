@@ -19,3 +19,13 @@ Guest user : guest / guest
 
 ### To save configuration : 
 At the end of the session , after user/exchange/queue creation(or deletion,modification) export Broker definitions (can be found at the end of the overview page) to /rabbitmq/etc/definitions.json (those exported definitions will be loaded at container startup)
+
+
+### To execute commands inside of the container
+```console
+docker exec -it rabbitMQ bash
+```
+Exemple :
+```console
+rabbitmqctl list_bindings
+```
