@@ -10,7 +10,7 @@ docker-compose up
 localhost:15672/
 ```
 
-### login Credential
+### login Credentials
 ```text
 Admin user : admin / admin
 Guest user : guest / guest
